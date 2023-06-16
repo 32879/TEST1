@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>ANCORE PAGE</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+   .menu-toggle {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      margin-top: -5em;
+    }
+
+    .menu-toggle .bar {
+      width: 30px;
+      height: 3px;
+      background-color: #ffadf3;
+      margin: 3px 0;
+      margin-left: 3em;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-left: auto;
+    }
+
+    .search-box input[type="text"] {
+      width: 200px;
+      padding: 6px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      background-color: transparent;
+      color: #fff;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    .search-box input[type="text"]::placeholder {
+      color: #fff;
+      opacity: 0.5;
+    }
+
+    .search-btn {
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    #nav ul {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    #nav .login-btn,
+    #nav .signup-btn {
+      margin-left: 10px;
+      color: #fff;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+    }
+
+    #nav .login-btn i {
+      margin-right: 5px;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    .concert-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .concert {
+      width: calc(100% / 6);
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* 스타일 코드 생략 */
+  </style>
+</head>
+<body class="is-preload">
+  <div id="page-wrapper">
+    <!-- Header -->
+    <div id="header">
+      <!-- Logo -->
+      <h1><a href="index.html" id="logo">ANCORE PAGE</a></h1>
+      <!-- Nav -->
+      <nav id="nav">
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul>
+          <li><a href="concert.html">공연</a></li>
+          <li><a href="reservation.html">예매처</a></li>
+          <li><a href="event.html">이벤트</a></li>
+          <li><a href="community.html">커뮤니티</a></li>
+          <li><a href="calendar.html">캘린더</a></li>
+          <li><a href="rank.html">순위</a></li>
+          <li><a href="concerthall.html">공연장</a></li>
+        </ul>
+        <div class="search-box">
+          <form action="search.html" method="GET">
+            <input type="text" placeholder="검색" />
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+            <button class="login-btn"><i class="fas fa-user"></i>로그인</button>
+            <button class="signup-btn">회원가입</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+
+
+  <h2>마감임박</h2>
+
+  <div class="concert-container">
+    <div class="concert">
+      <img src="images/concert1.jpg" alt="싸이흠뻑쇼 SUMMERSWAG2023 - 수원">
+      <h3>싸이흠뻑쇼 SUMMERSWAG2023 - 수원</h3>
+      <p>154000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+
+    <div class="concert">
+      <img src="images/concert2.jpg" alt="뮤지컬 〈맘마미아!〉">
+      <h3>뮤지컬 〈맘마미아!〉</h3>
+      <p>70000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+
+    <!-- 추가 콘서트 1 -->
+    <div class="concert">
+      <img src="images/concert3.jpg" alt="뮤지컬 〈오페라의 유령〉 - 부산">
+      <h3>뮤지컬 〈오페라의 유령〉 - 부산</h3>
+      <p>70000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+
+    <!-- 추가 콘서트 2 -->
+    <div class="concert">
+      <img src="images/concert4.jpg" alt="〈미스터트롯2〉 전국투어 콘서트 - 인천">
+      <h3>〈미스터트롯2〉 전국투어 콘서트 - 인천</h3>
+      <p>99000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+
+    <!-- 추가 콘서트 3 -->
+    <div class="concert">
+      <img src="images/concert5.jpg" alt="
+레이니 내한 공연 (LANY Live In Seoul)">
+      <h3>
+레이니 내한 공연 (LANY Live In Seoul)</h3>
+      <p>88000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+
+    <!-- 추가 콘서트 4 -->
+    <div class="concert">
+      <img src="images/concert6.jpg" alt="연극 〈3일간의 비〉">
+      <h3>연극 〈3일간의 비〉</h3>
+      <p>30000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+    
+    <!-- 추가 콘서트 5 -->
+    <div class="concert">
+      <img src="images/concert7.jpg" alt="연극 ＇리어왕 : KING LEAR＇">
+      <h3>연극 ＇리어왕 : KING LEAR＇</h3>
+      <p>44000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+    
+    <!-- 추가 콘서트 6 -->
+    <div class="concert">
+      <img src="images/concert8.jpg" alt="헬로!오페라 〈마술피리〉 - 여수">
+      <h3>헬로!오페라 〈마술피리〉 - 여수</h3>
+      <p>50000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+    
+    <!-- 추가 콘서트 7 -->
+    <div class="concert">
+      <img src="images/concert9.jpg" alt="KB국민카드 스타샵 X 2023 인천펜타포트락페스티벌">
+      <h3>KB국민카드 스타샵 X 2023 인천펜타포트락페스티벌</h3>
+      <p>120000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+    
+    <!-- 추가 콘서트 8 -->
+    <div class="concert">
+      <img src="images/concert10.jpg" alt="2023 AHN HYO SEOP ASIA TOUR 〈THE PRESENT SHOW in SEOUL〉 here and now">
+      <h3>2023 AHN HYO SEOP ASIA TOUR 〈THE PRESENT SHOW in SEOUL〉 here and now</h3>
+      <p>77000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+    
+    <!-- 추가 콘서트 9 -->
+    <div class="concert">
+      <img src="images/concert11.jpg" alt="2023 오늘도 무사히 〈유다빈밴드X행로난〉 - 인천">
+      <h3>2023 오늘도 무사히 〈유다빈밴드X행로난〉 - 인천</h3>
+      <p>30000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+    
+    <!-- 추가 콘서트 10 -->
+    <div class="concert">
+      <img src="images/concert12.jpg" alt="2023 최정윤 단독공연 〈Yoon:iverse〉">
+      <h3>2023 최정윤 단독공연 〈Yoon:iverse〉</h3>
+      <p>66000</p>
+      <button class="heart-btn"><i class="far fa-heart"></i> <span class="count">0</span></button>
+    </div>
+
+  </div>
+  <script>
+    var heartButtons = document.querySelectorAll(".heart-btn");
+
+    heartButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        button.classList.toggle("active");
+        var count = parseInt(button.querySelector(".count").textContent);
+        if (button.classList.contains("active")) {
+          count++;
+        } else {
+          count--;
+        }
+        button.querySelector(".count").textContent = count;
+      });
+    });
+  </script>
+</body>
+</html>

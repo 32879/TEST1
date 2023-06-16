@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>ANCORE PAGE</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+  body {
+  background-color: black;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+header input[type="text"] {
+  width: 200px;
+  padding: 6px;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+header input[type="text"]::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+ul.search-options {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 10px;
+}
+
+ul.search-options li {
+  flex: 1;
+}
+
+ul.search-options li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+ul.search-options li a.selected {
+  background-color: gray;
+  color: black;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#accuracy-btn.active {
+  background-color: gray;
+  color: black;
+}
+
+#latest-btn.active {
+  background-color: gray;
+  color: black;
+}
+
+main article:not(:last-child) {
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+main article div span {
+  margin-right: 5px;
+}
+
+#heart-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#heart-btn.active {
+  color: red;
+}
+
+
+  </style>
+</head>
+<body class="is-preload">
+  <div id="page-wrapper">
+    <header>
+      <input type="text" id="search-input" placeholder="검색어를 입력하세요"> <!-- 검색어 입력 창에 id 추가 -->
+      <button id="search-btn" class="search-btn"><i class="fas fa-search"></i></button> <!-- 검색 버튼에 id 추가 -->
+    </header>
+      <input type="text" placeholder="검색어를 입력하세요">
+    </header>
+</head>
+<body class="is-preload">
+  <div id="page-wrapper">
+    <!-- Header -->
+    <div id="header">
+      <!-- Logo -->
+      <h1><a href="index.html" id="logo">ANCORE PAGE</a></h1>
+      <!-- Nav -->
+      <nav id="nav">
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul>
+          <li><a href="concert.html">공연</a></li>
+          <li><a href="reservation.html">예매처</a></li>
+          <li><a href="event.html">이벤트</a></li>
+          <li><a href="community.html">커뮤니티</a></li>
+          <li><a href="calendar.html">캘린더</a></li>
+          <li><a href="rank.html">순위</a></li>
+          <li><a href="concerthall.html">공연장</a></li>
+        </ul>
+        <div class="search-box">
+          <input type="text" placeholder="검색" />
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+          <button class="login-btn"><i class="fas fa-user"></i>로그인</button>
+          <button class="signup-btn">회원가입</button>
+        </div>
+      </nav>
+    </div>
+    <script>
+      function toggleMenu() {
+        document.getElementById("nav").classList.toggle("show");
+      }
+
+      function toggleSort(sortType) {
+        if (sortType === 'latest') {
+          document.getElementById("accuracy-btn").classList.remove("active");
+          document.getElementById("latest-btn").classList.add("active");
+        } else {
+          document.getElementById("accuracy-btn").classList.add("active");
+          document.getElementById("latest-btn").classList.remove("active");
+        }
+      }
+
+      function toggleHeart(button) {
+        button.classList.toggle("active");
+        var count = button.innerText.match(/\d+/)[0];
+        if (button.classList.contains("active")) {
+          count++;
+        } else {
+          count--;
+        }
+        button.innerHTML = '<i class="fas fa-heart"></i> ' + count;
+      }
+
+      function search() {
+        var searchInput = document.getElementById("search-input");
+        var searchText = searchInput.value.toLowerCase();
+        var articles = document.querySelectorAll("main article");
+        articles.forEach(function (article) {
+          var title = article.querySelector("h2").innerText.toLowerCase();
+          if (title.includes(searchText)) {
+            article.style.display = "block";
+          } else {
+            article.style.display = "none";
+          }
+        });
+      }
+
+      // 검색 버튼 클릭 시 검색 기능 실행
+      document.getElementById("search-btn").addEventListener("click", search);
+
+      // 엔터 키 입력 시 검색 기능 실행
+      document.getElementById("search-input").addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) { // Enter 키의 keyCode는 13입니다.
+          search();
+        }
+      });
+    </script>
+  </div>
+</body>
+</html>
+</style>
+    <section>
+      <div>
+        <h2>검색 옵션</h2>
+        <ul>
+          <li><a href="전체.html">전체</a></li>
+          <li><a href="인기별.html">인기별</a></li>
+          <li><a href="제목별.html">제목별</a></li>
+          <li><a href="가수별.html">가수별</a></li>
+          <li><a href="날짜별.html">날짜별</a></li>
+          <li><a href="위치별.html">위치별</a></li>
+        </ul>
+      </div>
+      <div>
+        <button id="accuracy-btn" onclick="toggleSort('accuracy')">정확도</button>
+        <button id="latest-btn" onclick="toggleSort('latest')">최신순</button>
+      </div>
+    </section>
+
+    <main>
+      <article>
+        <div>
+          <img src="concert_image.jpg" alt="콘서트 이미지">
+        </div>
+        <div>
+          <h2>콘서트 제목</h2>
+          <p>장르: 록</p>
+          <p>공연 시간: 2시간</p>
+          <p>출연진: 가수 A, 가수 B, 가수 C</p>
+          <div>
+            <span>출연진 찜</span>
+            <button id="heart-btn" onclick="toggleHeart(this)">❤️ 0</button>
+          </div>
+        </div>
+        <div>
+          <p>공연장 지역: 서울</p>
+          <p>공연장 이름: ABC 아레나</p>
+          <p>공연 기간: 2023년 7월 1일 - 2023년 7월 3일</p>
+        </div>
+      </article>
+<article>
+        <div>
+          <img src="concert_image.jpg" alt="콘서트 이미지">
+        </div>
+        <div>
+          <h2>콘서트 제목</h2>
+          <p>장르: 록</p>
+          <p>공연 시간: 2시간</p>
+          <p>출연진: 가수 A, 가수 B, 가수 C</p>
+          <div>
+            <span>출연진 찜</span>
+            <button id="heart-btn" onclick="toggleHeart(this)">❤️ 0</button>
+          </div>
+        </div>
+        <div>
+          <p>공연장 지역: 서울</p>
+          <p>공연장 이름: ABC 아레나</p>
+          <p>공연 기간: 2023년 7월 1일 - 2023년 7월 3일</p>
+        </div>
+      </article>
+<article>
+        <div>
+          <img src="concert_image.jpg" alt="콘서트 이미지">
+        </div>
+        <div>
+          <h2>콘서트 제목</h2>
+          <p>장르: 록</p>
+          <p>공연 시간: 2시간</p>
+          <p>출연진: 가수 A, 가수 B, 가수 C</p>
+          <div>
+            <span>출연진 찜</span>
+            <button id="heart-btn" onclick="toggleHeart(this)">❤️ 0</button>
+          </div>
+        </div>
+        <div>
+          <p>공연장 지역: 서울</p>
+          <p>공연장 이름: ABC 아레나</p>
+          <p>공연 기간: 2023년 7월 1일 - 2023년 7월 3일</p>
+        </div>
+      </article>
+<article>
+        <div>
+          <img src="concert_image.jpg" alt="콘서트 이미지">
+        </div>
+        <div>
+          <h2>콘서트 제목</h2>
+          <p>장르: 록</p>
+          <p>공연 시간: 2시간</p>
+          <p>출연진: 가수 A, 가수 B, 가수 C</p>
+          <div>
+            <span>출연진 찜</span>
+            <button id="heart-btn" onclick="toggleHeart(this)">❤️ 0</button>
+          </div>
+        </div>
+        <div>
+          <p>공연장 지역: 서울</p>
+          <p>공연장 이름: ABC 아레나</p>
+          <p>공연 기간: 2023년 7월 1일 - 2023년 7월 3일</p>
+        </div>
+      </article>
+<article>
+        <div>
+          <img src="concert_image.jpg" alt="콘서트 이미지">
+        </div>
+        <div>
+          <h2>콘서트 제목</h2>
+          <p>장르: 록</p>
+          <p>공연 시간: 2시간</p>
+          <p>출연진: 가수 A, 가수 B, 가수 C</p>
+          <div>
+            <span>출연진 찜</span>
+            <button id="heart-btn" onclick="toggleHeart(this)">❤️ 0</button>
+          </div>
+        </div>
+        <div>
+          <p>공연장 지역: 서울</p>
+          <p>공연장 이름: ABC 아레나</p>
+          <p>공연 기간: 2023년 7월 1일 - 2023년 7월 3일</p>
+        </div>
+      </article>
+<article>
+        <div>
+          <img src="concert_image.jpg" alt="콘서트 이미지">
+        </div>
+        <div>
+          <h2>콘서트 제목</h2>
+          <p>장르: 록</p>
+          <p>공연 시간: 2시간</p>
+          <p>출연진: 가수 A, 가수 B, 가수 C</p>
+          <div>
+            <span>출연진 찜</span>
+            <button id="heart-btn" onclick="toggleHeart(this)">❤️ 0</button>
+          </div>
+        </div>
+        <div>
+          <p>공연장 지역: 서울</p>
+          <p>공연장 이름: ABC 아레나</p>
+          <p>공연 기간: 2023년 7월 1일 - 2023년 7월 3일</p>
+        </div>
+      </article>
+
+      <!-- 다른 게시글들을 반복해서 추가하세요. -->
+    </main>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("nav").classList.toggle("show");
+      }
+
+      function toggleSort(sortType) {
+        if (sortType === 'latest') {
+          document.getElementById("accuracy-btn").classList.remove("active");
+          document.getElementById("latest-btn").classList.add("active");
+        } else {
+          document.getElementById("accuracy-btn").classList.add("active");
+          document.getElementById("latest-btn").classList.remove("active");
+        }
+      }
+
+      function toggleHeart(button) {
+        button.classList.toggle("active");
+        var count = button.innerText.match(/\d+/)[0];
+        if (button.classList.contains("active")) {
+          count++;
+        } else {
+          count--;
+        }
+        button.innerText = "❤️ " + count;
+      }
+    </script>
+  </div>
+</body>
+</html>
